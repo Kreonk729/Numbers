@@ -22,7 +22,7 @@ clock = pygame.time.Clock()
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Параметры камеры
+
 camera_x, camera_y, camera_z = 0, 0, 0
 camera_speed = 5
 
@@ -41,7 +41,7 @@ for _ in range(NUM_COUNT):
 def draw_numbers():
     visible_count = 0  
     for x, y, z in NUMBERS:
-        # Применяем смещение камеры
+
         screen_x = int(WIDTH / 2 + (x - camera_x) * (300 / z))
         screen_y = int(HEIGHT / 2 + (y - camera_y) * (300 / z))
 
@@ -69,7 +69,7 @@ def update_numbers():
 
     NUMBERS = [num for num in NUMBERS if num[2] > camera_z - 500]  
 
-# Главный игровой цикл
+
 def main():
     global camera_x, camera_y, camera_z, screen, WIDTH, HEIGHT
     fullscreen = False  
